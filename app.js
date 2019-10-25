@@ -14,7 +14,7 @@ const fs = require('fs');
 let server;
 if(config.port) {
   // HTTP Server
-  server = app.listen(config.port, config.iface, () => {
+  server = app.listen(process.env.PORT || config.port, config.iface, () => {
     console.log(`PsiTransfer listening on http://${config.iface}:${config.port}`);
   });
 }
